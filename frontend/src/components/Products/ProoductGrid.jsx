@@ -7,8 +7,11 @@ const ProoductGrid = ({ products,loading,error }) => {
   }
 
   if(error){
-    return <P className="text-center">Error:{error}</P>
-  }
+return (
+  <div className="text-center py-5 text-danger fw-bold">
+    ⚠️ {error?.message || "Failed to load products"}
+  </div>
+)  }
   return (
     <div className="row g-4">
       {products.map((product, index) => (

@@ -267,10 +267,10 @@ router.get("/", async (req, res) => {
   router.get("/new-arrivals",async(req,res)=>{
     try {
         const newArrivals= await Product.find().sort({createdAt:-1}).limit(8);
-        res.json(newArrivals);
+        res.status(200).json(newArrivals);
     } catch (err) {
-        console.error(err);
-        res.status(500).send('Server Error')
+        console.error(err.message);
+        res.status(500).send(err.message,"server error")
         
     }
   })
