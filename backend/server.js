@@ -10,7 +10,6 @@ const subscriberRoutes= require("./routes/subscriberRoutes");
 const adminRoutes= require("./routes/adminRoutes");
 const adminOrderRoutes= require("./routes/adminOrderRoutes");
 const productAdminRoutes= require("./routes/productAdminRoutes");
-const seederData=require("./seeder")
 const cors =require('cors');
 const dotenv = require("dotenv")
 const cookieParser = require('cookie-parser');
@@ -21,19 +20,7 @@ const PORT = process.env.PORT;
 
 connectDb()
 
-const insertSeederData=async(req,res)=>{
-    try {
-           await seederData()
-           console.log("seeder data successfully inserted");
-           
-    } catch (error) {
-        console.log(error.message);
-        return res.status(500).json({success:false,msg:error.message})
-        
-    }
- 
-}
-insertSeederData()
+
 
 app.use(cors())
 app.use(cookieParser());

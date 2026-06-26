@@ -19,7 +19,7 @@ const queryParams=Object.fromEntries([...searchParams]);
 
   useEffect(()=>{
     dispatch(fetchProductsByFilters({collection,...queryParams}))
-  },[dispatch,collection,searchParams,queryParams]);
+  },[dispatch,collection,searchParams]);
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);

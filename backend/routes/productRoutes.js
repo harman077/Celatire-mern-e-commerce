@@ -124,6 +124,8 @@ router.delete("/:id", protect, admin, async (req, res) => {
 //desc get all products with optional query filters
 //access public
 router.get("/", async (req, res) => {
+ 
+  
     try {
       const {
         collection,
