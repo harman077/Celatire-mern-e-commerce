@@ -1,6 +1,6 @@
-const mongoose =require("mongoose");
-const dotenv =require("dotenv");
-dotenv.config()
+// const mongoose =require("mongoose");
+// const dotenv =require("dotenv");
+// dotenv.config()
 
 const Product=require("./models/Product");
 const products=require("./Data/productsSeed");
@@ -9,7 +9,7 @@ const Cart=require("./models/Cart");
 const User=require("./models/User");
 
 //CONNECT TO mongo db
-mongoose.connect(process.env.MONGO_URI);
+// mongoose.connect(process.env.MONGO_URI);
 
 //function to seed data
 
@@ -46,4 +46,5 @@ const seedData=async()=>{
     }
 };
 
-seedData();
+
+module.exports=seedData
